@@ -6,9 +6,11 @@ services:
       - '3000:3000'
     volumes :
       - './:/app'
+    env_file: .env
     command:
       - '/bin/bash'
       - '-c'
       - 'npm install && npm start'
     container_name: 'tweetmonitoring-frontend'
     working_dir: '/app'
+    stdin_open: true
