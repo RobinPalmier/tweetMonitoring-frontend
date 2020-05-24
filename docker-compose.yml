@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  node:
+    image: node:latest
+    ports:
+      - '3000:3000'
+    volumes :
+      - './:/app'
+    command:
+      - '/bin/bash'
+      - '-c'
+      - 'npm install && npm start'
+    container_name: 'tweetmonitoring-frontend'
+    working_dir: '/app'
