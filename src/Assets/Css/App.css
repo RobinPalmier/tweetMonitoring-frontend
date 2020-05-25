@@ -15,23 +15,37 @@ header{
 .connection form{
   display: flex;
   flex-direction: column;
-  padding : 20px;
-  background: #1DA1f2;
+  background: white;
   width: 500px;
   color: white;
   font-weight: bold;
   text-align: center;
+  box-shadow: 0 0 5px grey;
+  box-sizing: border-box;
+}
+
+.connection form label {
+  background: #1DA1f2;
+  padding: 15px;
+  margin-bottom: 10px;
 }
 
 .connection form input {
-  margin: 13px 0;
-  padding: 8px;
+  padding: 10px;
+  margin: 13px 20px;
+  background: rgb(240, 240, 240);
 }
 
 .connection form input[type=submit]{
   cursor: pointer;
+  background: #1DA1f2;
+  border: 2px solid #1DA1f2;
+  color: white;
+  margin-bottom: 25px;
+  font-weight: bold;
 }
 
 .connection form input[type=submit]:hover{
-  background: rgb(220,220,220);
+  color: #1DA1f2;
+  background: white;
 }

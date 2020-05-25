@@ -3,7 +3,7 @@ import React from 'react';
 function header () {
       return (
         <header>
-          <h1>Tweeter Monitoring</h1>
+          <h1>TweetMonitoring</h1>
         </header>
     );
 }

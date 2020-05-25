@@ -6,7 +6,7 @@ function formConnection (props) {
           <label>Connexion</label>
           <input type="email" value={props.inputValues.email} placeholder="Email" onChange={(e) => props.changeInputValue(e, "connexion", "email")}/>
           <input type="password" value={props.inputValues.password} placeholder="Mot de passe" onChange={(e) => props.changeInputValue(e, "connexion", "password")}/>
-          <input type="submit" Value="Se connecter"/>
+          <input type="submit" value="Se connecter"/>
         </form>
     );
 }
