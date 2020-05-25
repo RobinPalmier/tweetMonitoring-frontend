@@ -7,20 +7,42 @@ class Connection extends Component {
     super(props)
     this.state = {
       connexionFormValues : {email : "", password : ""},
-      registrationFormValues : {firstName:"", lastName:"", age:"", email:"", password:""}
+      registrationFormValues : {firstName:"", lastName:"", age:"", email:"", password:""},
+      connectionMessage : null,
+      connectionMessageStatus : null,
+      registrationMessage :null,
+      registrationMessageStatus :null
     }
   }
 
   send = (e, formType) => {
     e.preventDefault();
-    console.log(formType);
-    alert('envoyé');
+    if (formType === "connexion") {
+      let email = this.state.connexionFormValues.email;
+      let password = this.state.connexionFormValues.password;
+      if (email !== "" && password !== "") {
+        alert("Inscription validé");
+      }
+      else {
+        this.setState({connectionMessage: "Veuillez remplir tous les champs.", connectionMessageStatus : "false"})
+      }
+    }
+    else {
+      let firstName = this.state.registrationFormValues.firstName;
+      let lastName = this.state.registrationFormValues.lastName;
+      let age = this.state.registrationFormValues.age;
+      let email = this.state.registrationFormValues.email;
+      let password = this.state.registrationFormValues.password;
+      if (firstName !== "" && lastName !== "" && age !== "" && email !== "" && password !== "") {
+        alert("Inscription validé");
+      }
+      else {
+        this.setState({registrationMessage: "Veuillez remplir tous les champs.", registrationMessageStatus : "false"})
+      }
+    }
   }
 
   changeInputValue = (e, formType, fields) => {
-    console.log(e.target.value);
-    console.log(formType);
-    console.log(fields);
     if (formType === "connexion") {
       let email = this.state.connexionFormValues.email;
       let password = this.state.connexionFormValues.password;
@@ -33,7 +55,6 @@ class Connection extends Component {
       this.setState({connexionFormValues : {email,password}});
     }
     else {
-      console.log(e.target.value);
       let firstName = this.state.registrationFormValues.firstName;
       let lastName = this.state.registrationFormValues.lastName;
       let age = this.state.registrationFormValues.age;
@@ -56,7 +77,6 @@ class Connection extends Component {
       }
       this.setState({registrationFormValues : {firstName,lastName,age,email,password}});
     }
-
   }
 
   render(){
@@ -66,11 +86,15 @@ class Connection extends Component {
             changeInputValue={this.changeInputValue}
             inputValues={this.state.connexionFormValues}
             submitForm={this.send}
+            connectionMessage={this.state.connectionMessage}
+            connectionMessageStatus={this.state.connectionMessageStatus}
           />
           <FormRegistration
             changeInputValue={this.changeInputValue}
             inputValues={this.state.registrationFormValues}
             submitForm={this.send}
+            registrationMessage={this.state.registrationMessage}
+            registrationMessageStatus={this.state.registrationMessageStatus}
           />
         </div>
       );

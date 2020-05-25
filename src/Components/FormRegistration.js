@@ -1,9 +1,11 @@
 import React from 'react';
+import Notification from './Notification';
 
 function formConnection (props) {
       return (
         <form onSubmit={(e)=>props.submitForm(e, "registration")}>
           <label>Inscription</label>
+          {props.registrationMessage !== null ? <Notification message={props.registrationMessage} status={props.registrationMessageStatus}/> :""}
           <input
             value={props.inputValues.lastName}
             onChange={(e) => props.changeInputValue(e, "registration", "lastName")}
