@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+header{
+  background: #1DA1f2;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.connection{
+  display : flex;
+  justify-content: space-around;
+  align-items:  center;
+  height: 80vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.connection form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: white;
+  width: 500px;
   color: white;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 5px grey;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.connection form label {
+  background: #1DA1f2;
+  padding: 15px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.connection form input {
+  padding: 10px;
+  margin: 13px 20px;
+  background: rgb(240, 240, 240);
+}
+
+.connection form input[type=submit]{
+  cursor: pointer;
+  background: #1DA1f2;
+  border: 2px solid #1DA1f2;
+  color: white;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.connection form input[type=submit]:hover{
+  color: #1DA1f2;
+  background: white;
+}
+
+.notification{
+  margin: 0 20px 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-weight: bold;
+
 }
