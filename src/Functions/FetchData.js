@@ -9,11 +9,11 @@ const fetchData = (route, method, body, authorization) => {
   console.log("route : ", route, ", method : ", method, ", body : ", body, ', authorization : ', authorization);
   if (authorization === undefined) {
     if (body === undefined) {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : 'Allow',
+          'Access-Control-Allow-Origin' : '*',
         },
       })
       .then((res)=>{
@@ -25,11 +25,11 @@ const fetchData = (route, method, body, authorization) => {
         })
     }
     else {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : 'Allow',
+          'Access-Control-Allow-Origin' : '*',
         },
         body : JSON.stringify(body)
       })
@@ -44,11 +44,11 @@ const fetchData = (route, method, body, authorization) => {
   }
   else {
     if (body === undefined) {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : 'Allow',
+          'Access-Control-Allow-Origin' : '*',
           'Authorization': authorization
         },
       })
@@ -61,11 +61,11 @@ const fetchData = (route, method, body, authorization) => {
         })
     }
     else {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : 'Allow',
+          'Access-Control-Allow-Origin' : '*',
           'Authorization': authorization
         },
         body : JSON.stringify(body)
