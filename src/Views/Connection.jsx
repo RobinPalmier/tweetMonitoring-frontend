@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import FormConnection from '../Components/FormConnection';
 import FormRegistration from '../Components/FormRegistration';
+import {URL_CREATE_USER} from '../Constantes/Url';
+import {URL_USER_CONNEXION} from '../Constantes/Url';
+import fetchData from '../Functions/FetchData';
 
 class Connection extends Component {
   constructor(props){
@@ -21,7 +24,10 @@ class Connection extends Component {
       let email = this.state.connexionFormValues.email;
       let password = this.state.connexionFormValues.password;
       if (email !== "" && password !== "") {
-        alert("Inscription validé");
+        fetchData(URL_USER_CONNEXION, "Post", this.state.connexionFormValues)
+        .then(data => {
+          console.log(data);
+        })
       }
       else {
         this.setState({connectionMessage: "Veuillez remplir tous les champs.", connectionMessageStatus : "false"})
@@ -34,7 +40,10 @@ class Connection extends Component {
       let email = this.state.registrationFormValues.email;
       let password = this.state.registrationFormValues.password;
       if (firstName !== "" && lastName !== "" && age !== "" && email !== "" && password !== "") {
-        alert("Inscription validé");
+        fetchData(URL_CREATE_USER, "Post", this.state.registrationFormValues)
+        .then(data => {
+          console.log(data);
+        })
       }
       else {
         this.setState({registrationMessage: "Veuillez remplir tous les champs.", registrationMessageStatus : "false"})

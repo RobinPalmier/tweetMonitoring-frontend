@@ -6,9 +6,10 @@
 */
 
 const fetchData = (route, method, body, authorization) => {
+  console.log("route : ", route, ", method : ", method, ", body : ", body, ', authorization : ', authorization);
   if (authorization === undefined) {
     if (body === undefined) {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -24,7 +25,7 @@ const fetchData = (route, method, body, authorization) => {
         })
     }
     else {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ const fetchData = (route, method, body, authorization) => {
   }
   else {
     if (body === undefined) {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -60,7 +61,7 @@ const fetchData = (route, method, body, authorization) => {
         })
     }
     else {
-      return fetch(route, {mode: 'cors', method: method,
+      return fetch(route, {method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
