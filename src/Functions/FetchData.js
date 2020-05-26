@@ -6,13 +6,14 @@
 */
 
 const fetchData = (route, method, body, authorization) => {
+  console.log("route : ", route, ", method : ", method, ", body : ", body, ', authorization : ', authorization);
   if (authorization === undefined) {
     if (body === undefined) {
       return fetch(route, {mode: 'cors', method: method,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Origin' : 'Allow',
         },
       })
       .then((res)=>{
@@ -28,7 +29,7 @@ const fetchData = (route, method, body, authorization) => {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Origin' : 'Allow',
         },
         body : JSON.stringify(body)
       })
@@ -47,7 +48,7 @@ const fetchData = (route, method, body, authorization) => {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Origin' : 'Allow',
           'Authorization': authorization
         },
       })
@@ -64,7 +65,7 @@ const fetchData = (route, method, body, authorization) => {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Origin' : 'Allow',
           'Authorization': authorization
         },
         body : JSON.stringify(body)
