@@ -12,7 +12,8 @@ class TweetMonitoring extends Component {
  render(){
       return (
         <div className="tweet-monitoring">
-
+          <h1>Data visualisation des #mot clés</h1>
+          <h2>Mueen Le Gros Noob !</h2>
         </div>
       );
   }
