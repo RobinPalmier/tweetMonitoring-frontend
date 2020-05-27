@@ -5,6 +5,49 @@ header{
   padding: 10px;
 }
 
+nav {
+  background: rgb(50, 50, 50);
+  color: white;
+  font-weight: bold;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul div{
+  display: flex;
+  list-style: none;
+  margin-left: 10px;
+}
+
+nav ul a{
+  text-decoration: none;
+    color: white;
+    margin-right: 15px;
+    border-bottom: 4px rgb(50, 50, 50);
+    padding: 18px 0 10px;
+    display: block;
+}
+
+nav ul a:hover{
+  border-bottom: 4px solid #1DA1f2;
+}
+
+nav ul button {
+  background: none;
+  color: white;
+  padding: 18px 10px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: 4px solid rgb(50, 50, 50);;
+}
+
+nav ul button:hover {
+  border-bottom: 4px solid #1DA1f2;
+}
+
 .connection{
   display : flex;
   justify-content: space-around;
