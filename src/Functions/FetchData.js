@@ -6,7 +6,6 @@
 */
 
 const fetchData = (route, method, body, authorization) => {
-  console.log("route : ", route, ", method : ", method, ", body : ", body, ', authorization : ', authorization);
   if (authorization === undefined) {
     if (body === undefined) {
       return fetch(route, {method: method,
