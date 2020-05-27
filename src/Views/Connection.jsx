@@ -26,7 +26,10 @@ class Connection extends Component {
       if (email !== "" && password !== "") {
         fetchData(URL_USER_CONNEXION, "Post", this.state.connexionFormValues)
         .then(data => {
-          console.log(data);
+          const stringifiedUserData = JSON.stringify(data.data);
+          sessionStorage.setItem('userData', stringifiedUserData);
+          this.props.storeUserInformations(data.data.token);
+          this.setState({connectionMessageStatus: null, connectionMessageStatus : null, registrationMessage:null, registrationMessageStatus:null});
         })
       }
       else {
@@ -40,10 +43,10 @@ class Connection extends Component {
       let email = this.state.registrationFormValues.email;
       let password = this.state.registrationFormValues.password;
       if (firstName !== "" && lastName !== "" && age !== "" && email !== "" && password !== "") {
-        fetchData(URL_CREATE_USER, "Post", this.state.registrationFormValues)
-        .then(data => {
-          console.log(data);
-        })
+          fetchData(URL_CREATE_USER, "post", this.state.registrationFormValues)
+          .then((res)=>{
+            this.setState({registrationMessage:"Inscription réussie, veuillez vous connecter.", registrationMessageStatus:true});
+          })
       }
       else {
         this.setState({registrationMessage: "Veuillez remplir tous les champs.", registrationMessageStatus : "false"})

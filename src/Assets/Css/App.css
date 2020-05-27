@@ -55,5 +55,51 @@ header{
   box-sizing: border-box;
   padding: 10px;
   font-weight: bold;
+}
 
+.profil{
+  display: flex;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+.profil form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  box-shadow: 0 0 5px grey;
+}
+
+.profil form input{
+  background: rgb(230,230,230);
+  padding : 12px;
+  margin: 12px;
+}
+
+.profil form input[type="submit"]{
+  background: #1DA1f2;
+  color: white;
+  font-weight: bold;
+  padding : 12px;
+  margin: 12px;
+}
+
+.profil .profil-card {
+  width: 400px;
+  background: white;
+  box-shadow: 0 0 5px grey;
+  padding: 15px;
+}
+
+.profil .profil-card p{
+  margin: 15px 0;
+}
+
+.tweet-card{
+  width : 50%;
+  box-shadow: 0 0 5px grey;
+  border-radius: 15px;
+  background: white;
+  margin: 30px auto;
+  overflow: hidden;
 }
