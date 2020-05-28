@@ -25,9 +25,11 @@ class UserTweet extends Component {
               return(
                 <div className="tweet-card">
                   <img src={tweet.user.avatar}/>
-                  <p>{tweet.text}</p>
-                  <p>{tweet.user.name}</p>
-                  <p>{tweet.createdAt}</p>
+                  <div>
+                    <p>Autheur : <b>{tweet.user.name}</b></p>
+                    <p>crée le : <b>{tweet.createdAt}</b></p>
+                    <p>{tweet.text}</p>
+                  </div>
                 </div>
               )
             })}

@@ -23,17 +23,19 @@ nav ul div{
 }
 
 nav ul a{
-  text-decoration: none;
+    text-decoration: none;
     color: white;
     margin-right: 15px;
-    border-bottom: 4px rgb(50, 50, 50);
+    border-bottom: 4px solid rgb(50, 50, 50);
     padding: 18px 0 10px;
     display: block;
 }
 
 nav ul a:hover{
-  border-bottom: 4px solid #1DA1f2;
+    border-bottom: 4px solid red;
 }
+
+
 
 nav ul button {
   background: none;
@@ -41,11 +43,11 @@ nav ul button {
   padding: 18px 10px 10px;
   font-weight: bold;
   cursor: pointer;
-  border-bottom: 4px solid rgb(50, 50, 50);;
+  border-bottom: 4px solid rgb(50, 50, 50);
 }
 
 nav ul button:hover {
-  border-bottom: 4px solid #1DA1f2;
+  border-bottom: 4px solid red;
 }
 
 .connection{
@@ -145,4 +147,18 @@ nav ul button:hover {
   background: white;
   margin: 30px auto;
   overflow: hidden;
+  display: flex;
+}
+
+.tweet-card img{
+  width : 200px;
+}
+
+.tweet-card div{
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.tweet-card div p:last-child{
+  margin-top: 20px;
 }
