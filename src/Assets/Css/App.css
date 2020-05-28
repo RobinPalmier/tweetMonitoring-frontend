@@ -162,3 +162,30 @@ nav ul button:hover {
 .tweet-card div p:last-child{
   margin-top: 20px;
 }
+
+aside {
+  width : 300px;
+  padding: 10px;
+  background: rgb(230,230,230);
+  height: 85vh;
+}
+
+.hashtag-form input{
+ background: white;
+ padding : 10px;
+ margin-right: 11px;
+ cursor :pointer;
+}
+
+.hashtag-form {
+ border-bottom: 2px solid black;
+ padding-bottom: 20px;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li {
+  padding: 10px 0
+}

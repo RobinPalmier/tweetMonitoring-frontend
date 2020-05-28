@@ -11,29 +11,35 @@ class UserTweet extends Component {
   }
 
   componentDidMount(){
-    fetchData(URL_TWEET, 'get')
+    const userSession = JSON.parse(sessionStorage.getItem('userData'));
+    fetchData(URL_TWEET + this.props.userData.twitterScreenName, 'get')
     .then((res)=>{
-      this.setState({tweetList : res.tweets})
+      console.log(res);
+
+      this.setState({tweetList : res.data})
     })
   }
 
  render(){
       return (
         <div className="user-tweet">
-          <div>
-            {this.state.tweetList.map((tweet)=>{
-              return(
-                <div className="tweet-card">
-                  <img src={tweet.user.avatar}/>
-                  <div>
-                    <p>Autheur : <b>{tweet.user.name}</b></p>
-                    <p>crée le : <b>{tweet.createdAt}</b></p>
-                    <p>{tweet.text}</p>
-                  </div>
+        {this.props.userData.twitterScreenName === "" ? <h1>Vous n'avez de compte twitter</h1> : <div>
+          {this.state.tweetList.map((tweet)=>{
+            return(
+              <div className="tweet-card">
+                <img src={tweet.avatar} alt="profil"/>
+                <div>
+                  <p>Autheur : <b>{tweet.name}</b></p>
+                  <p>crée le : <b>{tweet.createdAt}</b></p>
+                  <p>{tweet.text}</p>
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
+        </div>
+
+        }
+
         </div>
       );
   }

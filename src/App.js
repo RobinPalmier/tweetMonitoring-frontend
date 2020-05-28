@@ -18,12 +18,16 @@ class App extends Component {
 
      this.state = {
        sessionToken : null,
-       userInformations : null
+       userInformations : {email : "", firstName : "", lastName:"", age : "", twitterScreenName : ""}
      }
   }
 
-  storeUserInformations = (dataUser) => {
+  storeUserSession = (dataUser) => {
     this.setState({sessionToken : dataUser})
+  }
+
+  storeUserInformations = (dataUser) => {
+    this.setState({userInformations : dataUser})
   }
 
   render(){
@@ -36,10 +40,12 @@ class App extends Component {
               <Route path="/tweet-monitoring">
                 <main>
                   { userSession === null || userSession === undefined ? <Connetion
-                      storeUserInformations={this.storeUserInformations}
+                      storeUserSession={this.storeUserSession}
                     /> : <main>
                       <Nav/>
-                      <TweetMonitoring />
+                      <TweetMonitoring
+                        userInformations={this.state.userInformations}
+                      />
                     </main>
                   }
 
@@ -47,19 +53,24 @@ class App extends Component {
               </Route>
               <Route path="/user-tweets">
                 {userSession === null || userSession === undefined ? <Connetion
-                  storeUserInformations={this.storeUserInformations}
+                  storeUserSession={this.storeUserSession}
                 /> : <main>
                     <Nav/>
-                    <UserTweet/>
+                    <UserTweet
+                      userData={this.state.userInformations}
+                    />
                   </main>
                 }
               </Route>
               <Route path="/">
                 {userSession === null || userSession === undefined ? <Connetion
-                  storeUserInformations={this.storeUserInformations}
+                  storeUserSession={this.storeUserSession}
                 /> : <main>
                         <Nav/>
-                        <Profil/>
+                        <Profil
+                          storeUserInformations={this.storeUserInformations}
+                          userData={this.state.userInformations}
+                        />
                      </main>
                 }
               </Route>
