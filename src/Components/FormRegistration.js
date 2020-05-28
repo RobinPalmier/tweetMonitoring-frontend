@@ -25,6 +25,12 @@ function formConnection (props) {
             placeholder="Age"
           />
           <input
+            value={props.inputValues.twitterScreenName}
+            onChange={(e) => props.changeInputValue(e, "registration", "twitterScreenName")}
+            type="text"
+            placeholder="Compte Twitter"
+          />
+          <input
             value={props.inputValues.email}
             onChange={(e) => props.changeInputValue(e, "registration", "email")}
             type="email"

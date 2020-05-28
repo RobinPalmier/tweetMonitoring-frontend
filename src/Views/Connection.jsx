@@ -10,7 +10,7 @@ class Connection extends Component {
     super(props)
     this.state = {
       connexionFormValues : {email : "", password : ""},
-      registrationFormValues : {firstName:"", lastName:"", age:"", email:"", password:""},
+      registrationFormValues : {firstName:"", lastName:"", age:"", twitterScreenName:"", email:"", password:""},
       connectionMessage : null,
       connectionMessageStatus : null,
       registrationMessage :null,
@@ -72,6 +72,8 @@ class Connection extends Component {
       let age = this.state.registrationFormValues.age;
       let email = this.state.registrationFormValues.email;
       let password = this.state.registrationFormValues.password;
+      let twitterScreenName = this.state.registrationFormValues.twitterScreenName;
+
       if (fields === "lastName") {
         lastName = e.target.value;
       }
@@ -80,6 +82,9 @@ class Connection extends Component {
       }
       else if (fields === "age") {
         age = e.target.value;
+      }
+      else if (fields === "twitterScreenName") {
+        twitterScreenName = e.target.value;
       }
       else if (fields === "email") {
         email = e.target.value;

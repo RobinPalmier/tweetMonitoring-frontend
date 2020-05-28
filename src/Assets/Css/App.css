@@ -189,3 +189,12 @@ aside ul {
 aside ul li {
   padding: 10px 0
 }
+
+.tweet-monitoring{
+  display: flex;
+}
+
+.twitter-chart{
+  display: flex;
+  justify-content: center;
+  }

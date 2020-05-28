@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fetchData from '../Functions/FetchData';
 import AddHashtagForm from '../Components/addHashtagForm';
+import { Line } from 'react-chartjs-2';
 
 class TweetMonitoring extends Component {
   constructor(props){
@@ -20,6 +21,20 @@ class TweetMonitoring extends Component {
   }
 
  render(){
+      const dataTmp = {
+        labels: ['Lundi', 'Mardi', 'Mercredi', 'jeudi'],
+        datasets: [{
+            label: 'Nombre de tweet',
+            data: [12, 19, 50000],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 1
+        }]
+      }
       return (
         <div className="tweet-monitoring">
           <aside>
@@ -36,6 +51,13 @@ class TweetMonitoring extends Component {
             })}
             </ul>
           </aside>
+          <div className="twitter-chart">
+            <Line
+              data={dataTmp}
+              width={800}
+              height={800}
+            />
+          </div>
         </div>
       );
   }
