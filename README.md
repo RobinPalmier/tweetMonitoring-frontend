@@ -2,7 +2,10 @@
 ### *Project Tweet analytics - A web analytics keyword dashboard*
 
 ---
+#### Back-End :
+[tweetMonitoring-backend](https://github.com/RobinPalmier/tweetMonitoring-backend)
 
+---
  #### Main features :
 * Sign up / Login.
 * User twitter account setup.
@@ -18,6 +21,10 @@
 - Clone the project from github
 - In a commande terminal use a "cd" to go to the root of the project
 - Run the the commande `docker-compose up` for launch the containers
+
+---
+#### URL : &nbsp;
+``http://localhost:3000/api/``
 
 ---
 #### Credit :
