@@ -28,7 +28,7 @@ class Connection extends Component {
         .then(data => {
           const stringifiedUserData = JSON.stringify(data.data);
           sessionStorage.setItem('userData', stringifiedUserData);
-          this.props.storeUserInformations(data.data.token);
+          this.props.storeUserSession(data.data.token);
           this.setState({connectionMessageStatus: null, connectionMessageStatus : null, registrationMessage:null, registrationMessageStatus:null});
         })
       }
