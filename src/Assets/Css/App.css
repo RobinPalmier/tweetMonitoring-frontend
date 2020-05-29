@@ -187,7 +187,8 @@ aside ul {
 }
 
 aside ul li {
-  padding: 10px 0
+  padding: 10px 5px;
+  cursor : pointer;
 }
 
 .tweet-monitoring{

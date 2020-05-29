@@ -8,7 +8,12 @@ class TweetMonitoring extends Component {
     super(props)
     this.state = {
       inputValue : "",
-      hashtagList : ["#grosNoob", "#RobinLeNoob", "#MueenLeNoob"]
+      hastagSelected : {data : {x : [], y:[]}},
+      hashtagList : [
+        {name : "#toto", isSelected : false, data : {x:[12, 19, 50000, 500],y:['Lundi', 'Mardi', 'Mercredi', 'jeudi']}},
+        {name : "#tutu", isSelected : false, data : {x:[12, 19, 5, 341],y:['Lundi', 'Mardi', 'Mercredi', 'jeudi']}},
+        {name : "#titi", isSelected : false, data : {x:[125, 324, 50, 800],y:['Lundi', 'Mardi', 'Mercredi', 'jeudi']}}
+      ]
     }
   }
 
@@ -20,12 +25,28 @@ class TweetMonitoring extends Component {
     this.setState({inputValue : e.target.value})
   }
 
+  selectHashtag = (hashtag) => {
+    let newHashtagSelected;
+    const newHashtagList = this.state.hashtagList.map((keyword)=>{
+      if (keyword.name === hashtag.name) {
+        keyword.isSelected = true;
+        newHashtagSelected = keyword;
+        return keyword;
+      }
+      else {
+        keyword.isSelected = false;
+        return keyword;
+      }
+    })
+    this.setState({hashtagList : newHashtagList, hastagSelected : newHashtagSelected})
+  }
+
  render(){
-      const dataTmp = {
-        labels: ['Lundi', 'Mardi', 'Mercredi', 'jeudi'],
+      let dataTmp = {
+        labels: this.state.hastagSelected.data.y,
         datasets: [{
             label: 'Nombre de tweet',
-            data: [12, 19, 50000],
+            data: this.state.hastagSelected.data.x,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -46,7 +67,13 @@ class TweetMonitoring extends Component {
             <ul>
             {this.state.hashtagList.map((hashtag, key)=>{
               return (
-                <li key={key}>{hashtag}</li>
+                <li
+                  key={key}
+                  onClick={()=>this.selectHashtag(hashtag)}
+                  style={hashtag.isSelected === true ? {background : "black", color : "white"} : {}}
+                >
+                  {hashtag.name}
+                </li>
               )
             })}
             </ul>
